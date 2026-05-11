@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fondo animado */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #000000, #14001f, #240046, #3c096c, #000000);
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    color: white;
+    overflow-x: hidden;
+}
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    width: 100%;
+    height: 80px;
+    background: rgba(15,15,15,0.75);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(199,125,255,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d0a2ff;
+    text-shadow: 0 0 10px #9d4edd;
+}
+
+.topbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.topbar nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    transition: 0.4s;
+    position: relative;
+}
+
+.topbar nav a:hover {
+    color: #d0a2ff;
+}
+
+.topbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #c77dff;
+    transition: 0.4s;
+}
+
+.topbar nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+.container {
+    display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: rgba(15,15,15,0.75);
+    backdrop-filter: blur(15px);
+    border-right: 1px solid rgba(199,125,255,0.2);
+    padding: 25px 20px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 28px;
+    color: #d0a2ff;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 18px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 16px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.05);
+    transition: 0.4s;
+    font-size: 17px;
+}
+
+.sidebar a:hover {
+    background: #7b2cbf;
+    transform: translateX(8px);
+    box-shadow: 0 0 15px rgba(157,78,221,0.6);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.titulo {
+    margin-bottom: 30px;
+}
+
+.titulo h2 {
+    font-size: 38px;
+    color: #d0a2ff;
+    text-shadow: 0 0 10px #9d4edd;
+}
+
+/* =========================
+   CARD RESERVA
+========================= */
+.card {
+    background: rgba(25,25,25,0.75);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(199,125,255,0.2);
+    transition: 0.5s;
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 25px rgba(199,125,255,0.4);
+}
+
+.card img {
+    width: 320px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(157,78,221,0.5);
+}
+
+.card-body {
+    flex: 1;
+}
+
+.card-body h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #d0a2ff;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: bold;
+    color: #d0a2ff;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+select:focus {
+    border-color: #9d4edd;
+    box-shadow: 0 0 10px rgba(157,78,221,0.5);
+    outline: none;
+}
+
+/* 🎥 Mapa de asientos */
+.cinema {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    background: #444;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.seat:hover {
+    background: #666;
+}
+
+.seat.selected {
+    background: #5a189a;
+    box-shadow: 0 0 10px #9d4edd;
+}
+
+.seat.occupied {
+    background: #b22222;
+    cursor: not-allowed;
+}
+
+/* Botón */
+.btn-comprar {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #5a189a, #9d4edd);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.btn-comprar:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #9d4edd;
+}

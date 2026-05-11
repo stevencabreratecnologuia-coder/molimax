@@ -1,0 +1,346 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #000000,
+        #14001f,
+        #240046,
+        #3c096c,
+        #000000
+    );
+
+    background-size:400% 400%;
+
+    animation:fondoAnimado 15s ease infinite;
+}
+
+/* =========================
+   ANIMACION FONDO
+========================= */
+
+@keyframes fondoAnimado{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* =========================
+   EFECTOS DECORATIVOS
+========================= */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(168,85,247,0.15);
+
+    filter:blur(90px);
+
+    z-index:-1;
+
+    animation:mover 8s infinite alternate;
+}
+
+body::before{
+
+    top:-100px;
+    left:-100px;
+}
+
+body::after{
+
+    bottom:-100px;
+    right:-100px;
+}
+
+@keyframes mover{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(50px);
+    }
+
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container{
+
+    width:420px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(20,20,20,0.75);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(168,85,247,0.3);
+
+    box-shadow:
+    0 0 35px rgba(168,85,247,0.35);
+
+    animation:entrada 1.2s ease;
+}
+
+/* =========================
+   ANIMACION ENTRADA
+========================= */
+
+@keyframes entrada{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(50px)
+        scale(0.9);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0px)
+        scale(1);
+    }
+
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.login-container h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:35px;
+
+    background:linear-gradient(
+        90deg,
+        #c77dff,
+        #9d4edd,
+        #7b2cbf
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:tituloGlow 3s infinite alternate;
+}
+
+@keyframes tituloGlow{
+
+    from{
+        filter:drop-shadow(0 0 5px #7b2cbf);
+    }
+
+    to{
+        filter:drop-shadow(0 0 20px #c77dff);
+    }
+
+}
+
+/* =========================
+   FORM
+========================= */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+/* INPUTS */
+
+form input,
+form select{
+
+    margin-bottom:18px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.07);
+
+    color:white;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:0.4s;
+}
+
+form input::placeholder{
+
+    color:#ccc;
+}
+
+form input:focus,
+form select:focus{
+
+    border:1px solid #c77dff;
+
+    box-shadow:
+    0 0 15px rgba(199,125,255,0.5);
+
+    transform:scale(1.02);
+}
+
+/* SELECT */
+
+form select{
+
+    cursor:pointer;
+}
+
+form option{
+
+    background:#1b0030;
+
+    color:white;
+}
+
+/* BOTON */
+
+form button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        90deg,
+        #5a189a,
+        #9d4edd,
+        #c77dff
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.4s;
+
+    margin-top:10px;
+}
+
+/* HOVER BOTON */
+
+form button:hover{
+
+    transform:
+    scale(1.05)
+    translateY(-2px);
+
+    box-shadow:
+    0 0 25px rgba(199,125,255,0.7);
+}
+
+/* MENSAJES */
+
+.mensaje{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#f8c8ff;
+
+    font-size:15px;
+}
+
+/* BOTON LOGIN */
+
+.btn-login{
+
+    width:100%;
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:18px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    background:transparent;
+
+    border:2px solid #9d4edd;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:0.4s;
+}
+
+.btn-login:hover{
+
+    background:#9d4edd;
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 20px rgba(157,78,221,0.6);
+}

@@ -1,0 +1,63 @@
+/* =========================
+   PAGO EXITOSO
+========================= */
+
+body.pago {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #000000, #14001f, #240046, #3c096c, #000000);
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* Animación del fondo */
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mensaje de éxito */
+body.pago .mensaje {
+    font-size: 34px;
+    color: #4CAF50; /* verde éxito */
+    margin-bottom: 40px;
+    padding: 20px 35px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(76,175,80,0.7);
+    text-shadow: 0 0 12px rgba(76,175,80,0.9);
+    animation: aparecer 1s ease forwards;
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón de salir */
+body.pago .boton {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(90deg, #5a189a, #9d4edd);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(157,78,221,0.6);
+}
+
+body.pago .boton:hover {
+    background: #7b2cbf;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #9d4edd;
+}

@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #000000, #14001f, #240046, #3c096c, #000000);
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    color: white;
+    padding: 30px 20px;
+}
+
+@keyframes fondoAnimado {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ── Navbar ── */
+.admin-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(25, 25, 25, 0.85);
+    border-radius: 12px;
+    padding: 14px 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+}
+
+.nav-logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #d0a2ff;
+    letter-spacing: 4px;
+    text-shadow: 0 0 12px #9d4edd;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    background: #6c757d;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #5a6268;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(199, 125, 255, 0.4);
+}
+
+/* ── Wrapper ── */
+.admin-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ── Título ── */
+.page-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    font-size: 1.8rem;
+    color: #d0a2ff;
+    text-shadow: 0 0 14px #9d4edd;
+    letter-spacing: 2px;
+}
+
+/* ── Contenedor tabla ── */
+.table-wrap {
+    background: rgba(25, 25, 25, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.5);
+    overflow-x: auto;
+    padding: 10px;
+}
+
+/* ── Tabla ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background: rgba(157, 78, 221, 0.25);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.5);
+}
+
+thead th {
+    padding: 14px 18px;
+    text-align: left;
+    color: #d0a2ff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(157, 78, 221, 0.12);
+    transition: background 0.25s;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: rgba(157, 78, 221, 0.12);
+}
+
+tbody td {
+    padding: 13px 18px;
+    color: white;
+    vertical-align: middle;
+}
+
+tbody td:first-child {
+    color: rgba(208, 162, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+/* ── Badge sala ── */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: bold;
+}
+
+.badge-purple {
+    background: rgba(157, 78, 221, 0.2);
+    color: #d0a2ff;
+    border: 1px solid rgba(157, 78, 221, 0.5);
+    box-shadow: 0 0 8px rgba(157, 78, 221, 0.3);
+}
+
+/* ── Acciones ── */
+.table-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ── Botones ── */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.82rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-outline {
+    background: linear-gradient(90deg, #5a189a, #9d4edd);
+    color: white;
+}
+
+.btn-outline:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #9d4edd;
+}
+
+.btn-danger {
+    background: rgba(220, 53, 69, 0.2);
+    color: #ff6b81;
+    border: 1px solid rgba(220, 53, 69, 0.45);
+}
+
+.btn-danger:hover {
+    background: rgba(220, 53, 69, 0.35);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .admin-nav      { flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
+    .page-header h1 { font-size: 1.3rem; }
+    .table-actions  { flex-direction: column; gap: 5px; }
+    .btn            { padding: 7px 12px; font-size: 0.78rem; }
+    thead th,
+    tbody td        { padding: 10px 12px; }
+}       

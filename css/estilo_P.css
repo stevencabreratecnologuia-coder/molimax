@@ -1,0 +1,102 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height:100vh;
+    background:linear-gradient(-45deg,#000000,#14001f,#240046,#3c096c,#000000);
+    background-size:400% 400%;
+    animation:fondoAnimado 15s ease infinite;
+    color:#fff;
+    padding:30px;
+}
+
+/* Animación fondo */
+@keyframes fondoAnimado {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Título */
+h2 {
+    text-align:center;
+    margin-bottom:20px;
+    font-size:32px;
+    background:linear-gradient(90deg,#c77dff,#9d4edd,#7b2cbf);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:tituloGlow 3s infinite alternate;
+}
+@keyframes tituloGlow {
+    from{filter:drop-shadow(0 0 5px #7b2cbf);}
+    to{filter:drop-shadow(0 0 20px #c77dff);}
+}
+
+/* Tabla */
+.tabla-peliculas {
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(20,20,20,0.75);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(157,78,221,0.4);
+}
+
+.tabla-peliculas th, .tabla-peliculas td {
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid rgba(199,125,255,0.2);
+}
+
+.tabla-peliculas th {
+    background:rgba(157,78,221,0.4);
+    color:#fff;
+    font-weight:bold;
+}
+
+.tabla-peliculas tr:hover {
+    background:rgba(199,125,255,0.1);
+}
+
+.tabla-peliculas img {
+    border-radius:8px;
+    max-height:80px;
+}
+
+/* Botones */
+.btn {
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.4s;
+    margin:2px;
+}
+
+.btn:hover {
+    transform:scale(1.05) translateY(-2px);
+    box-shadow:0 0 20px rgba(199,125,255,0.6);
+}
+
+/* Botón Agregar */
+.btn-agregar {
+    background:linear-gradient(90deg,#5a189a,#9d4edd,#c77dff);
+    color:#fff;
+}
+
+/* Botón Editar */
+.btn-editar {
+    background:linear-gradient(90deg,#28a745,#3cb371,#2ecc71);
+    color:#fff;
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+    background:linear-gradient(90deg,#dc3545,#a71d2a,#ff4d6d);
+    color:#fff;
+}

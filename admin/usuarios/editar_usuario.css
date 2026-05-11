@@ -1,0 +1,103 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height:100vh;
+    background:linear-gradient(-45deg,#000000,#14001f,#240046,#3c096c,#000000);
+    background-size:400% 400%;
+    animation:fondoAnimado 15s ease infinite;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Animación fondo */
+@keyframes fondoAnimado {
+    0% { background-position:0% 50%; }
+    50% { background-position:100% 50%; }
+    100% { background-position:0% 50%; }
+}
+
+/* Contenedor */
+.contenedor {
+    background:rgba(25,25,25,0.85);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 25px rgba(157,78,221,0.5);
+    width:400px;
+}
+
+/* Título */
+h2 {
+    text-align:center;
+    margin-bottom:20px;
+    color:#d0a2ff;
+    text-shadow:0 0 10px #9d4edd;
+}
+
+/* Formulario */
+.formulario label {
+    display:block;
+    margin:10px 0 5px;
+    color:#d0a2ff;
+    font-weight:bold;
+}
+
+.formulario input, .formulario select {
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:15px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    outline:none;
+}
+
+.formulario input:focus, .formulario select:focus {
+    box-shadow:0 0 10px #9d4edd;
+}
+
+/* Botones */
+.acciones {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.btn-guardar {
+    background:linear-gradient(90deg,#5a189a,#9d4edd);
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-guardar:hover {
+    transform:scale(1.05);
+    box-shadow:0 0 15px #9d4edd;
+}
+
+.btn-volver {
+    text-decoration:none;
+    background:#6c757d;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-volver:hover {
+    background:#5a6268;
+    transform:scale(1.05);
+    box-shadow:0 0 15px rgba(199,125,255,0.4);
+}
