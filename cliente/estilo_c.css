@@ -456,6 +456,8 @@ body{
     line-height:1.6;
 
     margin-bottom:20px;
+
+    
 }
 
 /* INFO */
@@ -650,5 +652,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
         font-size:40px;
     }
+
+
+
 
 }
